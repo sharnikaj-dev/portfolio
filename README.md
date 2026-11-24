@@ -1,21 +1,20 @@
-# Sharnika J - Portfolio
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
 
-## Create and run
-1. Make a folder `portfolio` with `index.html`, `style.css`, `script.js` (and an `images` folder).
-2. Double-click `index.html`, or in VS Code use the Live Server extension, or run `python -m http.server 8000` and open http://localhost:8000.
+# Run and deploy your AI Studio app
 
-## Edit content
-- Text: edit `index.html`. Each section has a comment header. Replace every `[Add ...]` placeholder.
-- Colors: change the variables at the top of `style.css`.
-- Email address for the form: `OWNER_EMAIL` in `script.js`.
-- Project links: change the GitHub profile link in each project card to the repo URL, and replace `[Add live demo URL]` with a link.
+This contains everything you need to run your app locally.
 
-## Profile photo
-Save a square photo as `images/profile.jpg`. In `index.html`, replace `<div class="photo-ph">...</div>` with `<img src="images/profile.jpg" alt="Sharnika J">`.
+View your app in AI Studio: https://ai.studio/apps/fe36db06-7c31-4be8-b796-4e46b5d1731e
 
-## Real email delivery (optional)
-Create a free form at formspree.io, then set `<form action="https://formspree.io/f/YOUR_ID" method="POST">` and remove the `submit` handler's mailto lines in `script.js`. On Netlify, add `data-netlify="true"` to the form instead.
+## Run Locally
 
-## Deploy free
-- GitHub Pages: push the files to a repo (index.html at the root), then Settings > Pages > Deploy from branch `main`, folder `/ (root)`.
-- Netlify: sign in at netlify.com, choose Add new site > Deploy manually, and drag the folder in.
+**Prerequisites:**  Node.js
+
+
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-sans: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html {
+    scroll-padding-top: 84px;
+    font-family: var(--font-sans);
+    background-color: #08080a;
+    color: #f4f4f5;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes amber-drift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(20px, -16px, 0) scale(1.06);
+  }
+}
+
+@keyframes amber-drift-reverse {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-18px, 14px, 0) scale(1.05);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 34s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-amber-drift {
+  animation: amber-drift 13s ease-in-out infinite;
+}
+
+.animate-amber-drift-reverse {
+  animation: amber-drift-reverse 15s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-amber-drift,
+  .animate-amber-drift-reverse {
+    animation: none;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #18181b !important;
+  }
+  .no-print,
+  .protected-certificate-modal {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
